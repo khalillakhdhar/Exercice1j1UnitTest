@@ -5,7 +5,12 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 public class Test {
+	@Rule
+	public ExpectedException exceptionRule = ExpectedException.none();	
+
 Validation v;
 @Before
 public void initialiser()
@@ -53,7 +58,18 @@ public void verifFact()
 assertTrue(v.factoriel(3)==6);	
 
 }
-
-
+//methode1
+@org.junit.Test(expected = Exception.class)
+public void whenExceptionThrown_thenExpectationSatisfied() {
+String test = null;
+test.length();
+}
+//methode2
+@org.junit.Test
+public void whenExceptionThrown_thenRuleIsApplied() {
+exceptionRule.expect(Exception.class);
+exceptionRule.expectMessage("For input string"); //facultatif
+Integer.parseInt("1a");
+}
 
 }
