@@ -55,7 +55,10 @@ fact*=i;
 }
 return fact;
 }
-
+public boolean verifIntervale(int x)
+{
+return (x<1000 && x>0);	
+}
 
 
 }
