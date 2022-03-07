@@ -45,6 +45,16 @@ public boolean verifEmpty(String chaine)
 return 	chaine.isEmpty();
 
 }
+public double factoriel(int f)
+{
+double fact=1;
+for(int i=2;i<=f;i++)
+{
+fact*=i;	
+
+}
+return fact;
+}
 
 
 
